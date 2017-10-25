@@ -1,5 +1,6 @@
 // jshint esversion:6
 const express = require('express');
+const Router = express.Router();
 const bodyParser = require('body-parser');
 // db and db models
 const db = require('./models');
@@ -18,12 +19,11 @@ const app = express();
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
+
 // app.use('/api', routes);
+app.use('/api', Router);
 
 
-app.get('/', (req, res) => {
-  
-});
 
 
 
