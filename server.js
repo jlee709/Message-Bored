@@ -7,7 +7,7 @@ const Message = db.message;
 const Topic = db.topic;
 const User = db.user;
 // ^ db models ^
-const routes = require('./routes');
+// const routes = require('./routes');
 const sequelize = require('sequelize');
 const PORT = process.env.PORT || 3000;
 
@@ -17,7 +17,7 @@ const app = express();
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
-app.use('/api', routes);
+// app.use('/api', routes);
 
 
 const server = app.listen(PORT, () => {
