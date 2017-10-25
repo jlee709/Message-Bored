@@ -32,4 +32,4 @@ Users.post('/', (req, res) => {
   });
 });
 
-module.exports = Users;
+module.exports = users;

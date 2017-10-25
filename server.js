@@ -13,17 +13,18 @@ const methodOverride = require('method-override');
 const sequelize = require('sequelize');
 const PORT = process.env.PORT || 3000;
 
-
 // express initiated
 const app = express();
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
-
 // app.use('/api', routes);
 app.use('/api', Router);
 
 
+app.get('*', (req, res) => {
+  res.sendFile('index.html', { root: path.join(__dirname, '/public') });
+});
 
 
 
@@ -31,3 +32,6 @@ const server = app.listen(PORT, () => {
   db.sequelize.sync({force: false});
   console.log(`Server is Listening on port: ${PORT}`);
 });
+
+//testing - remove later
+module.exports = server;
