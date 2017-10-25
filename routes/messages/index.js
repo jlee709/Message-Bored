@@ -1,4 +1,4 @@
-/*jshint esversion:6*/
+// jshint esversion:6
 const express = require('express');
 const Messages = express.Router();
 const { Message, User, Topic } = require('../../models');

@@ -16,10 +16,10 @@ const PORT = process.env.PORT || 3000;
 // express initiated
 const app = express();
 
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 app.use(express.static('public'));
 // app.use('/api', routes);
-app.use('/api', Router);
+app.use('/routes', Router);
 
 
 app.get('*', (req, res) => {
@@ -29,7 +29,7 @@ app.get('*', (req, res) => {
 
 
 const server = app.listen(PORT, () => {
-  db.sequelize.sync({force: false});
+  db.sequelize.sync({force: true});
   console.log(`Server is Listening on port: ${PORT}`);
 });
 
