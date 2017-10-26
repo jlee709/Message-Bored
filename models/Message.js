@@ -1,27 +1,12 @@
-module.exports = function(sequelize, DataTypes) {
-  var Message = sequelize.define("messages", {
-    body: {
-      type: DataTypes.TEXT,
-      allowNull: false
-    }
-  }, {
-    classMethods: {
-      associate: function(models) {
-        Message.belongsTo(models.User, {
-          as: 'Author',
-          foreignKey: {
-            name: 'author_id',
-            allowNull: false
-          }
-        });
-        Message.belongsTo(models.Topic, {
-          foreignKey: {
-            name: 'topic_id',
-            allowNull: false
-          }
-        });
-      }
-    }
+//jshint esversion:6
+
+module.exports = function(sequelize,DataTypes){
+  const Messages = sequelize.define('messages', {
+    body: DataTypes.STRING
   });
-  return Message;
+  Messages.associate = function(models){
+    Messages.belongsTo(models.users);
+    Messages.belongsTo(models.topics);
+  };
+  return Messages;
 };
