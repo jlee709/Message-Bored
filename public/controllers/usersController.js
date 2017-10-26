@@ -2,8 +2,8 @@
 console.log('Users Controller Here!');
 
 
-angular.module('MessageBored')
-.controller('UserController', ['$scope','$http','$routes',function ($scope, $http, $routes) {
+angular.module('myApp')
+.controller('usersController', ['$scope','$http','$routes',function ($scope, $http, $routes) {
 
     //for all users
     $scope.users = '';
@@ -11,8 +11,12 @@ angular.module('MessageBored')
       method: 'GET',
       url: `/api/users/`
     })
-    .then(());
-   
-
+    .then((data, status, headers, config) =>{
+      $scope.users = data.data;
+    })
+    .catch(() => {
+      console.log(err);
+    });
+    // is logged in? logged out? 
   }
 ]);

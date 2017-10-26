@@ -20,16 +20,16 @@ Users.get('/:id', (req, res) => {
   });
 });
 
-Users.post('/', (req, res) => {
-  User.create({
-    name: req.body.name
-  })
-  .then( (user) => {
-    res.json(user);
-  })
-  .catch( (err) => {
-    res.json(err);
-  });
-});
+// Users.post('/', (req, res) => {
+//   User.create({
+//     name: req.body.name
+//   })
+//   .then( (user) => {
+//     res.json(user);
+//   })
+//   .catch( (err) => {
+//     res.json(err);
+//   });
+// });
 
 module.exports = users;
