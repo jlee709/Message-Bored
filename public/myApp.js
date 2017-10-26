@@ -1,11 +1,11 @@
 // creating a new module
-angular.module('myApp', ['ngRoute', 'ngController']);
+angular.module('myApp', ['ngRoute']);
 
 // getting back that new module
 var app = angular.module('myApp')
-.config(['message_bored', '$routeProvider', '$locationProvider', function(MoviesProvider, $routeProvider, $locationProvider) {
+.config(['$routeProvider', '$locationProvider', function( $routeProvider, $locationProvider) {
   // configure Movies
-  message_bored.setUrl('http://localhost:3000/api/home');
+  // "message_bored.setUrl('http://localhost:3000/api/home');"
 
   // THE ROUTES
   // $routeProvider
@@ -27,8 +27,4 @@ var app = angular.module('myApp')
 
   // this gets rid of #!
   // $locationProvider.html5Mode(true);
-}])
-.run(['APP_VERSION', '$rootScope', function(APP_VERSION, $rootScope) {
-  // run goes here
-  $rootScope.APP_VERSION = APP_VERSION;
 }]);

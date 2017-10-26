@@ -58,5 +58,4 @@ Messages.post('/', (req, res) => {
   });
 });
 
-
 module.exports = Messages;

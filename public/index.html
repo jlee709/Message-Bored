@@ -1,20 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en" >
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <title>Justins Message_Board</title>
 </head>
-<body>
+<body ng-app="myApp">
 
 
 <div ng-view>
   loading...
 </div>
 
-<div ng-route>
-  
+<div ng-controller="firstCtrl">
+  name <input type="text" ng-model="user.name">
+</div>
+
+<div ng-controller="secondCtrl">
+  Name <input type="text" ng-model="otheruser.name">
 </div>
 
 <div>

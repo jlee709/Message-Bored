@@ -1,22 +1,15 @@
-//jshint esversion:6
-console.log('Users Controller Here!');
+// starting thing 
 
+var app = angular.module("myApp");
 
-angular.module('myApp')
-.controller('usersController', ['$scope','$http','$routes',function ($scope, $http, $routes) {
+app.controller('firstCtrl', function ($scope, myService) {
+  $scope.user = myService.user;  
+});
 
-    //for all users
-    $scope.users = '';
-    $http({
-      method: 'GET',
-      url: `/api/users/`
-    })
-    .then((data, status, headers, config) =>{
-      $scope.users = data.data;
-    })
-    .catch(() => {
-      console.log(err);
-    });
-    // is logged in? logged out? 
-  }
-]);
+app.controller('secondCtrl', function ($scope, myService) {
+  $scope.otheruser = myService.user;  
+});
+
+app.service('myService', function(){
+  this.user = {};
+});
