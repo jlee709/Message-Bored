@@ -1,11 +1,11 @@
 // creating a new module
-angular.module('myApp', ['ngRoute']);
+angular.module('myApp', ['ngRoute', 'ngController']);
 
 // getting back that new module
 var app = angular.module('myApp')
-.config(['MoviesProvider', '$routeProvider', '$locationProvider', function(MoviesProvider, $routeProvider, $locationProvider) {
+.config(['message_bored', '$routeProvider', '$locationProvider', function(MoviesProvider, $routeProvider, $locationProvider) {
   // configure Movies
-  MoviesProvider.setUrl('http://localhost:3000/api/movies');
+  message_bored.setUrl('http://localhost:3000/api/home');
 
   // THE ROUTES
   // $routeProvider
@@ -30,7 +30,5 @@ var app = angular.module('myApp')
 }])
 .run(['APP_VERSION', '$rootScope', function(APP_VERSION, $rootScope) {
   // run goes here
-
   $rootScope.APP_VERSION = APP_VERSION;
-
 }]);

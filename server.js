@@ -1,6 +1,7 @@
 // jshint esversion:6
 const express = require('express');
 const Router = express.Router();
+const routes = require('./routes');
 const bodyParser = require('body-parser');
 // db and db models
 const db = require('./models');
@@ -19,7 +20,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(express.static('public'));
 // app.use('/api', routes);
-app.use('/routes', Router);
+app.use('/api', routes);
 
 
 app.get('*', (req, res) => {
@@ -29,7 +30,7 @@ app.get('*', (req, res) => {
 
 
 const server = app.listen(PORT, () => {
-  db.sequelize.sync({force: true});
+  db.sequelize.sync({force: false});
   console.log(`Server is Listening on port: ${PORT}`);
 });
 
