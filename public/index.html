@@ -1,29 +1,25 @@
-<!DOCTYPE html>
-<html lang="en" >
+<!DOCTYPE html >
+<html lang="en" ng-app="myApp" >
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <title>Justins Message_Board</title>
    <base href="/">
+  <div ng-include src="'/views/partials/_nav.html'"></div>
 </head>
-<body ng-app="myApp">
-
+<body>
 
 <div ng-view>
   loading...
 </div>
-<div>
-  <h1>This is the Main Landing Page!  </h1>
-</div>
 
 <div>
-  <h4>Here is a link to the users page --> <a href="/users">Users</a></h4>
+  <a href="/">Home</a>
 </div>
 
-
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js" type="text/javascript"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.js" type="text/javascript"></script>
   <script src="./scripts/app.js"></script>
@@ -33,6 +29,5 @@
   <script src="/controllers/topicsController.js"></script>
   <script src="/controllers/homeController.js"></script>
   <script src="/services/usersService.js"></script>
-
 </body>
 </html>
