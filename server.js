@@ -1,6 +1,7 @@
 // jshint esversion:6
 const express = require('express');
 const Router = express.Router();
+const path = require('path');
 const routes = require('./routes');
 const bodyParser = require('body-parser');
 // db and db models

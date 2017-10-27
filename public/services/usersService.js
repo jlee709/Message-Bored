@@ -8,6 +8,7 @@ app.service('usersService', ['$http',function($http) {
 //replce url with api
   this.uApi = 'http://localhost:3000/api/';
   
+  //returns a promise 
   this.getUsers = function(){
     return $http.get(this.uApi + 'users')
     .then(function(res){
