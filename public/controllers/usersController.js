@@ -7,12 +7,10 @@ var app = angular.module("myApp")
    .then(function(users) {
     $scope.users = users;
    });
-
-   // usersService.findUser()
-   // .then(function(user) {
-   //  $scope.user = user;
-   // });
 }]);
+
+ 
+
 // app.controller('firstCtrl', function ($scope, myService) {
 //   $scope.user = myService.user;  
 // });

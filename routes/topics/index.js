@@ -10,7 +10,7 @@ Topics.get('/', (req, res) => {
     include: [
       {
         model: User,
-       
+        // as: 'Creator'
       }
     ]
   })
@@ -27,7 +27,7 @@ Topics.get('/:id', (req, res) => {
     include: [
       {
         model: User,
-        as: 'Creator'
+        // as: 'Creator'
       }
     ]
   })
