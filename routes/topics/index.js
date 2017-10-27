@@ -1,14 +1,16 @@
 // jshint esversion:6
 const express = require('express');
 const Topics = express.Router();
-const { Topic, User } = require('../../models');
+const db  = require('../../models');
+const Topic = db.topics;
+const User= db.users;
 
 Topics.get('/', (req, res) => {
   Topic.all({
     include: [
       {
         model: User,
-        as: 'Creator'
+       
       }
     ]
   })

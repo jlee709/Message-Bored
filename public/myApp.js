@@ -17,12 +17,20 @@ var app = angular.module('myApp')
     templateUrl: '/views/users.html',
     controller: 'usersController'
   })
-  // .when('/movies', {
-  //   templateUrl: '/views/movies.html',
-  //   controller: 'MoviesController'
-  // })
+
+  .when('/users/:id', {
+    templateUrl: '/views/user.html',
+    controller: 'userController'
+  })
+
+  .when('/topics', {
+    templateUrl: '/views/topics.html',
+    controller: 'topicsController'
+  })
+
   .otherwise({
     template: '<h1>SCREAMING BEAVER ITS BROKEN!!!!</h1>'
+    
   });
 
  
