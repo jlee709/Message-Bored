@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <title>Justins Message_Board</title>
+   <base href="/">
 </head>
 <body ng-app="myApp">
 
@@ -12,24 +13,12 @@
 <div ng-view>
   loading...
 </div>
-
-<div ng-controller="firstCtrl">
-  name <input type="text" ng-model="user.name">
-</div>
-
-<div ng-controller="secondCtrl">
-  Name <input type="text" ng-model="otheruser.name">
+<div>
+  <h1>This is the Main Landing Page!  </h1>
 </div>
 
 <div>
-   <a href="#">Home Page</a> l
-   <h3>Welcome to the message board</h3>
-   <p>you can see a list of users here</p>
-</div>
-
-
-<div>
-  <h4>Here is a link to the users page <a href="#">Users</a></h4>
+  <h4>Here is a link to the users page --> <a href="/users">Users</a></h4>
 </div>
 
 
@@ -42,5 +31,8 @@
   <script src="/controllers/usersController.js"></script>
   <script src="/controllers/messagesController.js"></script>
   <script src="/controllers/topicsController.js"></script>
+  <script src="/controllers/homeController.js"></script>
+  <script src="/services/usersService.js"></script>
+
 </body>
 </html>
