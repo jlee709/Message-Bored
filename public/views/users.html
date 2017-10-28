@@ -3,14 +3,19 @@
 <br>
 
 <div class="container text-center">
-<div>
-  <h1>Main User Lists Page!</h1>
-</div>
-<br>
-<div class="container text-center">
-  <div ng-controller = "usersController">
-      <div ng-repeat="user in users" >
-      <p>{{user.username}}</p>
+  <div>
+    <h1>Main User Lists Page!</h1>
+  </div>
+  <br>
+  <div class="container text-center">
+    <div ng-controller = "usersController">
+        <div ng-repeat="user in users" >
+        <p>{{user.username}}</p>
+      </div>
     </div>
   </div>
+</div>
+
+<div class="container col-8">
+  Create new User
 </div>
