@@ -1,8 +1,17 @@
 // jshint esversion:6
+
 const express = require('express');
 const Router = express.Router();
 const path = require('path');
 const routes = require('./routes');
+
+// authentication
+const passport = require('passport');
+const session = require('express-session');
+const redis = require('connect-redis')(session); 
+// const authenticatePassport = require('passport');
+// authenticate^
+
 const bodyParser = require('body-parser');
 // db and db models
 const db = require('./models');
@@ -20,6 +29,12 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static('public'));
+app.use(session({
+  store: new redis(),
+  secret: "keyboard cat",
+  resave: false,
+  saveInitialized: false
+}));
 // app.use('/api', routes);
 app.use('/api', routes);
 

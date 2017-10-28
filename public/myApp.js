@@ -22,7 +22,7 @@ var app = angular.module('myApp')
     templateUrl: '/views/login.html',
     controller: 'usersController'
   })
-  
+
   .when('/login', {
     templateUrl: '/views/login.html',
     controller: 'usersController'
@@ -44,8 +44,7 @@ var app = angular.module('myApp')
   })
 
   .otherwise({
-    template: '<h1>SCREAMING BEAVER ITS BROKEN!!!!</h1>'
-    
+    template: '/views/404.html'
   });
  
  $locationProvider.html5Mode(true);
