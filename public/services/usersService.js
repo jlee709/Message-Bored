@@ -6,7 +6,7 @@ var app = angular.module("myApp");
 
 app.service('usersService', ['$http',function($http) {
 //replce url with api
-  this.uApi = 'http://localhost:3000/';
+  this.uApi = 'http://localhost:3000/api/';
   
   //returns a promise 
   this.getUsers = function(){
@@ -17,13 +17,14 @@ app.service('usersService', ['$http',function($http) {
   };
   // create a user 
   this.create = function(username, password){
+    console.log(username,password, ' HOLY SHIT!');
     let data = {
       username: username,
       password: password
     };
 
     console.log(data, ' DATA DATA DATA DATA ');
-    return $http.post(this.uApi + 'login', {username: username , password: password})
+    return $http.post(this.uApi + 'users/register', {username: username , password: password})
     .then(function(res) {
       return res.data;
     });

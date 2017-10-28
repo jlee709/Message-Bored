@@ -18,6 +18,11 @@ var app = angular.module('myApp')
     controller: 'homeController'
   })
 
+  .when('/register', {
+    templateUrl: '/views/login.html',
+    controller: 'usersController'
+  })
+  
   .when('/login', {
     templateUrl: '/views/login.html',
     controller: 'usersController'

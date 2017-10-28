@@ -1,7 +1,7 @@
 
-<!-- login -->
+<!-- login  Register Form-->
 
-<form action="" method="" class="register-form"> 
+<form method="POST" class="register-form"> 
       <div class="row">      
            <div class="col-md-4 col-sm-4 col-lg-4">
               <label for="username">USERNAME</label>
@@ -25,12 +25,11 @@
       <hr>
       <div class="row">
            <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6"> 
-           <button class="btn btn-default regbutton"><a href="login"></a>Register</button>
-           
+           <button  ng-click="create()" class="btn btn-default regbutton"><a href="register"></a>Register</button>
           </div>
-          <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+          <!-- <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
            <button class="btn btn-default logbutton">Sign up</button>           
-          </div>          
+          </div>   -->        
       </div>    
     </form>
 </div>

@@ -12,4 +12,17 @@ this.getTopics = function(){
     return res.data;
     });
   };
+
+  this.create = function(topicName){ // <-- change
+    let data = {
+      topicName: '',
+      body: ''
+    };
+
+    console.log(data, ' DATA DATA DATA DATA ');
+    return $http.post(this.uApi + 'login', {username: username , password: password})
+    .then(function(res) {
+      return res.data;
+    });
+  };
 }]);

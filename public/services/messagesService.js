@@ -12,4 +12,16 @@ this.getMessages = function(){
     return res.data;
     });
   };
+
+  this.create = function(message){ // <-- change
+    var newMessage = {
+      messageBody: '',
+    };
+
+    console.log(data, ' DATA DATA DATA DATA ');
+    return $http.post(this.uApi + 'login', {username: username , password: password})
+    .then(function(res) {
+      return res.data;
+    });
+  };
 }]);

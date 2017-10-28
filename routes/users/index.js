@@ -7,6 +7,7 @@ const users = db.users;
 
 router.get('/', (req, res) => {
   users.all().then((users) =>{
+    console.log(users, ' ROUTER FUCKKKKKKK!');
     res.json(users);
   });
 });

@@ -11,3 +11,8 @@ module.exports = function(sequelize,DataTypes){
   // };
   return Users;
 };
+
+
+
+
+// only set to belong to
