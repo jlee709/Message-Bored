@@ -7,17 +7,15 @@ var app = angular.module("myApp")
    .then(function(users) {
     $scope.users = users;
    });
+   
+   $scope.username = '';
+   $scope.password = '';
+
+   usersService.create($scope.username, $scope.password)
+   .then(function(data){
+    console.log(data, ' DATA HERE !!!');
+   })
+   .catch(function(err){
+      console.log("broken numb nuts");
+   });
 }]);
-
- 
-
-// app.controller('firstCtrl', function ($scope, myService) {
-//   $scope.user = myService.user;  
-// });
-
-
-
-//service to get HTTP req form a link 
-
-// eds example 
-

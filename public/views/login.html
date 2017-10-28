@@ -1,26 +1,31 @@
+
+<!-- login -->
+
 <form action="" method="" class="register-form"> 
       <div class="row">      
            <div class="col-md-4 col-sm-4 col-lg-4">
-              <label for="firstName">NAME</label>
-               <input name="firstName" class="form-control" type="text">    
+              <label for="username">USERNAME</label>
+               <input ng-model="username" name="username" class="form-control" type="text">    
            </div>            
       </div>
-      <div class="row">
+      <!-- <div class="row">
            <div class="col-md-4 col-sm-4 col-lg-4">
               <label for="email">EMAIL</label>
                <input name="email" class="form-control" type="email">             
            </div>            
-      </div>
+      </div> -->
       <div class="row">
            <div class="col-md-4 col-sm-4 col-lg-4">
               <label for="password">PASSWORD</label>
-               <input name="password" class="form-control" type="password">             
+               <input ng-model="password" name="password" class="form-control" type="password">             
            </div>            
       </div>
+      {{username}}
+      {{password}}
       <hr>
       <div class="row">
-           <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
-           <button class="btn btn-default regbutton">Register</button>
+           <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6"> 
+           <button class="btn btn-default regbutton"><a href="login"></a>Register</button>
            
           </div>
           <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">

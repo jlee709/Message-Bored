@@ -6,7 +6,7 @@ var app = angular.module("myApp");
 
 app.service('usersService', ['$http',function($http) {
 //replce url with api
-  this.uApi = 'http://localhost:3000/api/';
+  this.uApi = 'http://localhost:3000/';
   
   //returns a promise 
   this.getUsers = function(){
@@ -15,71 +15,17 @@ app.service('usersService', ['$http',function($http) {
       return res.data;
     });
   };
+  // create a user 
+  this.create = function(username, password){
+    let data = {
+      username: username,
+      password: password
+    };
+
+    console.log(data, ' DATA DATA DATA DATA ');
+    return $http.post(this.uApi + 'login', {username: username , password: password})
+    .then(function(res) {
+      return res.data;
+    });
+  };
 }]);
-  // this.addBook = function(givenBook) {
-  //   if (!givenBook) { return; }
-  //   var book = {
-  //     title: givenBook.title,
-  //     author: givenBook.author
-  //   };
-  //   books.push(book);
-  // };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//OLD CODE BELOW NOT WORK
-
-
-// app.service('myService', function(){
-//   this.user = {};
-// });
-
-
-// app.controller('usersController', function($scope, $http) {
-//     $http.get("api/users")
-//     .then(function (response) {
-//         $scope.myWelcome = response.data;
-//     });
-// });
-
-
-
-// angular.module('myApp')
-// .controller('usersController', ['$scope','$http','$routes',function ($scope, $http, $routes) {
-//     //for all users
-//     $scope.users = '';
-//     $http({
-//       method: 'GET',
-//       url: `/api/users/`
-//     })
-//     .then((data, status, headers, config) =>{
-//       $scope.users = data.data;
-//     })
-//     .catch(() => {
-//       console.log(err);
-//     });
-//     // is logged in? logged out? 
-//   }
-// ]);
-
-// //service function for users
-// function getAllusers(){
-//  return users.all();
-// }
-
-// function getUser(){
-//   return users.findById(req.params.id);
-// }
-

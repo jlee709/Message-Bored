@@ -20,7 +20,7 @@ var app = angular.module('myApp')
 
   .when('/login', {
     templateUrl: '/views/login.html',
-  
+    controller: 'usersController'
   })
 
   .when('/users', {
@@ -42,7 +42,6 @@ var app = angular.module('myApp')
     template: '<h1>SCREAMING BEAVER ITS BROKEN!!!!</h1>'
     
   });
-
  
  $locationProvider.html5Mode(true);
   // this gets rid of #!

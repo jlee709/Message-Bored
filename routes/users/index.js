@@ -2,7 +2,8 @@
 
 const express = require('express');
 const router = express.Router();
-const {users} = require('../../models');
+const db = require('../../models');
+const users = db.users;
 
 router.get('/', (req, res) => {
   users.all().then((users) =>{
@@ -17,10 +18,11 @@ router.get('/:id', (req, res) => {
   });
 });
 
-router.post('/', (req, res) => {
+router.post('/register', (req, res) => {
   console.log(req.body, "THIS IS THE REQ BODY");
   users.create({
-    name: req.body.name
+    username: req.body.username,
+    password: req.body.password
   })
   .then( (user) => {
     res.json(user);
@@ -29,5 +31,33 @@ router.post('/', (req, res) => {
     res.json(err);
   });
 });
+
+router.get('/login', (req, res) => {
+  console.log(req.body, "THIS IS THE REQ BODY");
+  users.findById({
+    username: req.body.username
+  })
+  .then( (user) => {
+    res.json(user);
+  })
+  .catch( (err) => {
+    res.json(err);
+  });
+});
+
+
+// router.get('/logout', (req, res) => {
+//   console.log(req.body, "THIS IS THE REQ BODY");
+//   users.create({
+//     name: req.body.name
+//   })
+//   .then( (user) => {
+//     res.json(user);
+//   })
+//   .catch( (err) => {
+//     res.json(err);
+//   });
+// });
+
 
 module.exports = router;
