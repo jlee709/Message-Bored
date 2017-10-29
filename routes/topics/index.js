@@ -37,9 +37,11 @@ Topics.get('/:id', (req, res) => {
 });
 
 Topics.post('/', (req, res) => {
+  console.log(req.body);
   Topic.create({
-    created_by: req.body.created_by,
-    name: req.body.name,
+    userId: req.body.userId,
+    title: req.body.title,
+
   })
   .then( (topic) => {
     res.json(topic);

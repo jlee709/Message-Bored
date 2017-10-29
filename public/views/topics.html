@@ -10,3 +10,13 @@
    <p>{{topic.title}}</p>
 </div>
 
+<div ng-messages>
+  
+</div>
+<div>
+  <ng-messages for="expression" role="alert">
+    <ng-message when="stringValue">Click Here</ng-message>
+    <ng-message when="stringValue1, stringValue2, ...">...</ng-message>
+    <ng-message when-exp="expressionValue">...</ng-message>
+  </ng-messages>
+</div>
