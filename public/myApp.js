@@ -9,10 +9,12 @@ var app = angular.module('myApp')
 
   // THE ROUTES
   $routeProvider
+
   .when('/', {
     templateUrl: '/views/home.html',
     controller: 'homeController'
   })
+  
   .when('/home', {
     templateUrl: '/views/home.html',
     controller: 'homeController'

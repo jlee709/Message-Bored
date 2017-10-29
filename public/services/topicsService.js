@@ -13,14 +13,13 @@ this.getTopics = function(){
     });
   };
 
-  this.create = function(topicName){ // <-- change
+  this.create = function(title){ // <-- change
     let data = {
-      topicName: '',
-      body: ''
+      title: ''
     };
 
     console.log(data, ' DATA DATA DATA DATA ');
-    return $http.post(this.uApi + 'login', {username: username , password: password})
+    return $http.post(this.uApi + 'topics/new', {title: title})
     .then(function(res) {
       return res.data;
     });
